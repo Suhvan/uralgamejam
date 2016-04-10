@@ -1,2 +1,2 @@
-build/Iznanka_Data/output_log.txt
+build/*/output_log.txt
 build/*.pdb
