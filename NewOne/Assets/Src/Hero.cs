@@ -7,55 +7,88 @@ public class Hero : MonoBehaviour {
 	private float maxSpeed = 10.0f;
 
 	[SerializeField]
+	float jumpForce = 20;
+
+	[SerializeField]
 	Transform itemPosition;
 
-	Rigidbody2D body;
+	[SerializeField]
+	Transform groundCheck;
 
+	//TODO: очевидно надо перенести это в какой то конфиг
+	[SerializeField]
+	public LayerMask WhatIsGround;
+
+	[SerializeField]
+	public int playerLayer;
+
+	[SerializeField]
+	public int platformLayer;
+
+	bool grounded = false;
+
+	float groundRadius = 0.02f;
+	Rigidbody2D body;
 	Module currentModule;
 	bool facingRight = true;
 
+	//TODO: написать бы класс - инвентарь
 	Item holdedItem;
-	
+
+	public float getYPos()
+	{
+		return groundCheck.position.y;
+	}
+
 	// Use this for initialization
 	void Start () {
 		body = GetComponent<Rigidbody2D>();	
 	}
 
-	void Update()
+	void useModule()
 	{
-		if (currentModule != null && Input.GetKeyDown(KeyCode.Space))
+		var dispenser = currentModule as DispenserModule;
+		if (dispenser != null)
 		{
-			
-			var dispenser = currentModule as DispenserModule;
-			if (dispenser!=null)
+			if (holdedItem != null)
 			{
-				if(holdedItem!=null)
-				{
-					TopPanel.Instance.setStatus("Руки уже заняты");
-					return;
-				}
-
-				if (!PickUpItem(dispenser.GetItem()))
-	            {
-					TopPanel.Instance.setStatus("Нечего брать");
-				}
-				
-				return;         
-			}
-
-			var shaft = currentModule as ShaftModule;
-			if (shaft != null)
-			{
-				if (shaft.StoreItem(holdedItem))
-					holdedItem = null;
+				TopPanel.Instance.setStatus("Руки уже заняты");
 				return;
 			}
 
-			currentModule.SetTrigger();
+			if (!PickUpItem(dispenser.GetItem()))
+			{
+				TopPanel.Instance.setStatus("Нечего брать");
+			}
+
+			return;
+		}
+
+		var shaft = currentModule as ShaftModule;
+		if (shaft != null)
+		{
+			if (shaft.StoreItem(holdedItem))
+				holdedItem = null;
+			return;
+		}
+
+		currentModule.SetTrigger();
+	}
+
+	void Update()
+	{
+		if (currentModule != null && Input.GetKeyDown(KeyCode.E))
+		{
+			useModule();
+        }
+
+		if (grounded && Input.GetKeyDown(KeyCode.Space))
+		{
+			body.AddForce(new Vector2(0, jumpForce));
 		}
 	}
 
-//INVENTORY
+	//TODO: написать бы класс - инвентарь
 	bool PickUpItem(Item item)
 	{
 		if(holdedItem!=null || item == null)
@@ -68,6 +101,11 @@ public class Hero : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+
+		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, WhatIsGround);
+
+		//Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, body.velocity.y > 0);
+
 		float move = Input.GetAxis("Horizontal");
 
 		body.velocity = new Vector2(move * maxSpeed, body.velocity.y);
@@ -92,6 +130,9 @@ public class Hero : MonoBehaviour {
 	{
 		currentModule = null;
     }
+
+
+
 
 	void Flip()
 	{
