@@ -77,12 +77,12 @@ public class Hero : MonoBehaviour {
 
 	void Update()
 	{
-		if (currentModule != null && Input.GetKeyDown(KeyCode.E))
+		if (currentModule != null && Input.GetKeyDown(KeyCode.Space))
 		{
 			useModule();
         }
 
-		if (grounded && Input.GetKeyDown(KeyCode.Space))
+		if (grounded && Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			body.AddForce(new Vector2(0, jumpForce));
 		}
