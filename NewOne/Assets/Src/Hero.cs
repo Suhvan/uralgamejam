@@ -92,6 +92,7 @@ public class Hero : MonoBehaviour {
 
 		if (jumpCooldown <= 0 && grounded && Input.GetKey(KeyCode.UpArrow))
 		{
+			body.velocity = Vector2.zero;
 			body.AddForce(new Vector2(0, jumpForce));
 			jumpCooldown = 0.2f;
 		}

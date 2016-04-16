@@ -262,22 +262,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &143200
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 445228}
-  - 61: {fileID: 6154356}
-  m_Layer: 8
-  m_Name: hatch
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &143220
 GameObject:
   m_ObjectHideFlags: 1
@@ -680,7 +664,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7367316, z: 1}
   m_Children: []
   m_Father: {fileID: 478570}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!4 &402282
 Transform:
   m_ObjectHideFlags: 1
@@ -824,7 +808,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7367316, z: 1}
   m_Children: []
   m_Father: {fileID: 478570}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!4 &429762
 Transform:
   m_ObjectHideFlags: 1
@@ -918,18 +902,6 @@ Transform:
   - {fileID: 439120}
   m_Father: {fileID: 453158}
   m_RootOrder: 5
---- !u!4 &445228
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143200}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2308, y: 0.0849, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 478570}
-  m_RootOrder: 3
 --- !u!4 &445508
 Transform:
   m_ObjectHideFlags: 1
@@ -983,7 +955,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.6674999, z: 1}
   m_Children: []
   m_Father: {fileID: 478570}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &467410
 Transform:
   m_ObjectHideFlags: 1
@@ -1011,7 +983,7 @@ Transform:
   - {fileID: 429762}
   - {fileID: 438236}
   m_Father: {fileID: 478570}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!4 &469272
 Transform:
   m_ObjectHideFlags: 1
@@ -1047,7 +1019,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.6396877, z: 1}
   m_Children: []
   m_Father: {fileID: 478570}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &470776
 Transform:
   m_ObjectHideFlags: 1
@@ -1085,7 +1057,6 @@ Transform:
   - {fileID: 416804}
   - {fileID: 417376}
   - {fileID: 402282}
-  - {fileID: 445228}
   - {fileID: 464166}
   - {fileID: 470392}
   - {fileID: 467410}
@@ -1439,20 +1410,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.040048476, y: 0.009424592}
---- !u!61 &6154356
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143200}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.036049783, y: -0.000000022351742}
-  serializedVersion: 2
-  m_Size: {x: 0.14895879, y: 0.010453424}
 --- !u!61 &6154812
 BoxCollider2D:
   m_ObjectHideFlags: 1
