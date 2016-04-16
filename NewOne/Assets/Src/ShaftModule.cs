@@ -17,6 +17,14 @@ public class ShaftModule : Module {
 
 		storedItem.transform.parent = gameObject.transform;
 		storedItem.transform.position = itemPosition.transform.position;
+
+		if (storedItem.transform.localScale.x < 0)
+		{	
+			var scale = storedItem.transform.localScale;
+			scale.x *= -1;
+			transform.localScale = scale;
+		}
+		
 		return true;
 	}
 
