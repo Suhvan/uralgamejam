@@ -25,6 +25,9 @@ public class EnemyTank : BasicShooter
     [SerializeField]
     float moveDuration = 2.0f;
 
+    [SerializeField]
+    float precision = 0.8f;
+
     float moveDirection = -1.0f;
     float moveTimer = 0.0f;
 
@@ -99,30 +102,42 @@ public class EnemyTank : BasicShooter
     {
         lastActionWasReposition = false;
 
+        Vector3 aimPointMod = aimPoint.transform.position;
+        // miss much!
+        bool miss = Random.value > precision;
+        if( miss )
+        {
+            if (Random.value > 0.5)
+                aimPointMod.x += Random.Range(8.0f, 18.0f);
+            else
+                aimPointMod.x -= Random.Range(12.0f, 25.0f);
+        }
+
         // aim vaguely
         float initialForce = Random.Range( -3, 3 );
         float initialVelocity = (projPrefab.shotForce + initialForce) / projPrefab.GetComponent<Rigidbody2D>().mass;
 
         // ignore vertical difference
         float approxAlpha = Mathf.PI/4;
-        float alphaSin = Mathf.Abs(shootingPoint.position.x - aimPoint.position.x) * projPrefab.GetComponent<Rigidbody2D>().gravityScale * Mathf.Abs( Physics2D.gravity.y ) / (initialVelocity * initialVelocity);
+        float alphaSin = Mathf.Abs(shootingPoint.position.x - aimPointMod.x) * projPrefab.GetComponent<Rigidbody2D>().gravityScale * Mathf.Abs(Physics2D.gravity.y) / (initialVelocity * initialVelocity);
         if( Mathf.Abs( alphaSin ) >= 0.999 )
         {
-            // no solution, sorry, just shoot as far as you can
+            // no solution, sorry
+            return;
         }
         else
         {
             approxAlpha = Mathf.Asin( alphaSin ) / 2;
         }
 
-        bool shootLeft = shootingPoint.position.x > aimPoint.position.x;
-
-        // miss much!
-        approxAlpha += Random.Range(0.1f, 0.1f);
+        bool shootLeft = shootingPoint.position.x > aimPointMod.x;
+        
+        approxAlpha = Mathf.Clamp( approxAlpha, 0, Mathf.PI / 4 );
 
         // there also could be 2 solutions: "low" or "hi" angle, Asin provides us with "low" one
         // make it "hi" 75% of the time
-        if (approxAlpha < Mathf.PI / 4 && Random.value <= 0.75f)
+        // also always hi when missing
+        if (Random.value <= 0.75f || miss)
             approxAlpha = ( Mathf.PI / 2 - approxAlpha );
 
         if (shootLeft)
