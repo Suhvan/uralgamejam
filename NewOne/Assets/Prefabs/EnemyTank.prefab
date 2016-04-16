@@ -59,6 +59,7 @@ GameObject:
   - 212: {fileID: 21233050}
   - 114: {fileID: 11493216}
   - 60: {fileID: 6089818}
+  - 50: {fileID: 5021584}
   m_Layer: 12
   m_Name: EnemyTank
   m_TagString: Untagged
@@ -117,6 +118,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 477402}
   m_RootOrder: 1
+--- !u!50 &5021584
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141840}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!60 &6089818
 PolygonCollider2D:
   m_ObjectHideFlags: 1
