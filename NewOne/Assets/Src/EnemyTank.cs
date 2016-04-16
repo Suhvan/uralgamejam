@@ -105,7 +105,7 @@ public class EnemyTank : BasicShooter
 
         // ignore vertical difference
         float approxAlpha = Mathf.PI/4;
-        float alphaSin = Mathf.Abs(shootingPoint.position.x - aimPoint.position.x) * projPrefab.GetComponent<Rigidbody2D>().gravityScale * 10 / (initialVelocity * initialVelocity);
+        float alphaSin = Mathf.Abs(shootingPoint.position.x - aimPoint.position.x) * projPrefab.GetComponent<Rigidbody2D>().gravityScale * Mathf.Abs( Physics2D.gravity.y ) / (initialVelocity * initialVelocity);
         if( Mathf.Abs( alphaSin ) >= 0.999 )
         {
             // no solution, sorry, just shoot as far as you can
@@ -122,7 +122,7 @@ public class EnemyTank : BasicShooter
 
         // there also could be 2 solutions: "low" or "hi" angle, Asin provides us with "low" one
         // make it "hi" 75% of the time
-        if (approxAlpha < Mathf.PI / 8 && Random.value <= 0.75f)
+        if (approxAlpha < Mathf.PI / 4 && Random.value <= 0.75f)
             approxAlpha = ( Mathf.PI / 2 - approxAlpha );
 
         if (shootLeft)
