@@ -196,7 +196,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: -0.48, z: 0}
+  m_LocalPosition: {x: -0.36, y: -0.772, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 498144}
@@ -233,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.596, y: -0.964, z: -1}
+  m_LocalPosition: {x: -1.596, y: -1.064, z: -1}
   m_LocalScale: {x: 1.9385782, y: 1.4837253, z: 3}
   m_Children: []
   m_Father: {fileID: 498144}
@@ -245,7 +245,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.806, y: -0.948, z: -1}
+  m_LocalPosition: {x: 0.806, y: -1.048, z: -1}
   m_LocalScale: {x: 1.9385782, y: 1.4837253, z: 3}
   m_Children: []
   m_Father: {fileID: 498144}
@@ -281,7 +281,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57218784, y: 6.0903625, z: 0}
+  m_LocalPosition: {x: 0.57218784, y: 5.7, z: 0}
   m_LocalScale: {x: 1.8749739, y: 1.8749739, z: 18.749739}
   m_Children:
   - {fileID: 456932}
@@ -371,7 +371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99828a9717edf1541bd592e2fb2441dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   collider: {fileID: 6195330}
   btn: {fileID: 11424366}
 --- !u!114 &11422428
@@ -385,7 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99828a9717edf1541bd592e2fb2441dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   collider: {fileID: 6143000}
   btn: {fileID: 11403464}
 --- !u!114 &11424366
@@ -415,7 +413,7 @@ MonoBehaviour:
   rightPlatform: {fileID: 174682}
   leftButton: {fileID: 11424366}
   rightButton: {fileID: 11403464}
-  changeSpeed: 0.002
+  changeSpeed: 0.001
   top: {fileID: 456932}
   bottom: {fileID: 436142}
 --- !u!212 &21204806
