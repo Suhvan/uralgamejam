@@ -8,9 +8,12 @@ public class Gun : MonoBehaviour {
 	public float Angle 
 	{
 		set
-		{ 
-			gameObject.transform.localRotation = Quaternion.Euler (0, 0, value);
-			angle = value;
+		{
+			if (!float.IsNaN(value))
+			{
+				gameObject.transform.localRotation = Quaternion.Euler(0, 0, value);
+				angle = value;
+			}
 		}
 		get
 		{

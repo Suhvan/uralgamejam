@@ -5,6 +5,7 @@ public class Button : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Active = true;
 	}
 	
 	// Update is called once per frame
@@ -25,13 +26,13 @@ public class Button : MonoBehaviour {
 
 	public void Press()
 	{
-		if (!Pressed)
+		if (!m_pressed)
 			m_pressed = true;
 	}
 
 	public void Release()
 	{
-		if (Pressed)
+		if (m_pressed)
 			m_pressed = false;
 	}
 

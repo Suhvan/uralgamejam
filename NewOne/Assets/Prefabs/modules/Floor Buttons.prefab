@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21260578}
   - 114: {fileID: 11452938}
   - 61: {fileID: 6175048}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: floor-button-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - 4: {fileID: 443976}
   - 114: {fileID: 11408282}
   - 61: {fileID: 6116556}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: lbtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - 212: {fileID: 21213782}
   - 114: {fileID: 11407764}
   - 61: {fileID: 6134474}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: floor-button-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - 4: {fileID: 498890}
   - 114: {fileID: 11412860}
   - 61: {fileID: 6166462}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: rbtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: d0119eb428300c14caaf0783e5ef8ca2, type: 2}
   m_IsTrigger: 0
@@ -285,21 +285,21 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: d0119eb428300c14caaf0783e5ef8ca2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.0007594824, y: -0.004176855}
+  m_Offset: {x: -0.0007594427, y: -0.013809204}
   serializedVersion: 2
-  m_Size: {x: 0.16354737, y: 0.031645738}
+  m_Size: {x: 0.16354737, y: 0.012381333}
 --- !u!114 &11407764
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99828a9717edf1541bd592e2fb2441dd, type: 3}
   m_Name: 
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99828a9717edf1541bd592e2fb2441dd, type: 3}
   m_Name: 
@@ -357,6 +357,7 @@ MonoBehaviour:
   leftButton: {fileID: 11408282}
   rightButton: {fileID: 11412860}
   tank: {fileID: 0}
+  moveSpeed: 1
 --- !u!212 &21213782
 SpriteRenderer:
   m_ObjectHideFlags: 1
