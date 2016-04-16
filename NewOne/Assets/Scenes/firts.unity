@@ -971,11 +971,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 401470, guid: 46d943675b2bef64489523531c0bf9e6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.021000003
+      value: -0.045
       objectReference: {fileID: 0}
     - target: {fileID: 401470, guid: 46d943675b2bef64489523531c0bf9e6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.07000001
+      value: -0.0136
       objectReference: {fileID: 0}
     - target: {fileID: 401470, guid: 46d943675b2bef64489523531c0bf9e6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1003,19 +1003,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11477076, guid: 46d943675b2bef64489523531c0bf9e6, type: 2}
       propertyPath: jumpForce
-      value: 280
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019664, guid: 46d943675b2bef64489523531c0bf9e6, type: 2}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 401470, guid: 46d943675b2bef64489523531c0bf9e6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 401470, guid: 46d943675b2bef64489523531c0bf9e6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 210
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46d943675b2bef64489523531c0bf9e6, type: 2}
@@ -2316,6 +2304,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2470,7 +2459,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498144, guid: 1c5fdd42d9149594baebee31a40f5443, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.0903625
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 498144, guid: 1c5fdd42d9149594baebee31a40f5443, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2516,6 +2505,18 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 2141979920}
+    - target: {fileID: 456932, guid: 1c5fdd42d9149594baebee31a40f5443, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.772
+      objectReference: {fileID: 0}
+    - target: {fileID: 480386, guid: 1c5fdd42d9149594baebee31a40f5443, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 474466, guid: 1c5fdd42d9149594baebee31a40f5443, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.064
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c5fdd42d9149594baebee31a40f5443, type: 2}
   m_IsPrefabParent: 0
