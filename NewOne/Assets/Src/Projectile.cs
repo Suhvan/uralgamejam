@@ -4,7 +4,7 @@ using System.Collections;
 public class Projectile : MonoBehaviour {
 
 	[SerializeField]
-	float shotForce = 10;
+	public float shotForce = 10;
 
     [SerializeField]
     float tracingInterval = 0.2f;

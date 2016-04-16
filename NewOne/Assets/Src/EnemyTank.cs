@@ -12,6 +12,9 @@ public class EnemyTank : BasicShooter
     Transform aimPoint;
 
     [SerializeField]
+    Gun gunToAim;
+
+    [SerializeField]
     float idealDistance = 20.0f;
 
     //
@@ -79,7 +82,6 @@ public class EnemyTank : BasicShooter
         lastActionWasReposition = true;
 
         bool moveLeft = idealDistance < gameObject.transform.position.x - aimPoint.position.x;
-        Debug.Log(moveLeft);
         // move 'wrong' way sometimes
         if (Random.value > 0.8f)
             moveLeft = !moveLeft;
@@ -94,8 +96,18 @@ public class EnemyTank : BasicShooter
         lastActionWasReposition = false;
 
         // aim vaguely
+        float initialForce = Random.Range( -3, 3 );
+        float initialVelocity = (projPrefab.shotForce + initialForce) / projPrefab.GetComponent<Rigidbody2D>().mass;
+
+        float approxAlpha = Mathf.Asin( (shootingPoint.position.x - aimPoint.position.x) * projPrefab.GetComponent<Rigidbody2D>().gravityScale * 10 / (initialVelocity * initialVelocity) ) / 2;
+
+        // miss much!
+        approxAlpha *= Random.Range(0.8f, 1.8f);
+        Debug.Log("approxAlpha " + approxAlpha);
+        gunToAim.Angle = 180 - Mathf.Rad2Deg * approxAlpha;
+
 
         //
-        Shoot(Random.Range( -3, 3 ));
+        Shoot(initialForce);
     }
 }

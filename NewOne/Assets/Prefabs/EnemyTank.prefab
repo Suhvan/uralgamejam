@@ -143,8 +143,9 @@ MonoBehaviour:
   shootingPoint: {fileID: 417964}
   actionInterval: 3
   aimPoint: {fileID: 0}
-  idealDistance: 20
-  moveSpeed: 2
+  gunToAim: {fileID: 11470824}
+  idealDistance: 120
+  moveSpeed: 4
   moveDuration: 2
 --- !u!212 &21224834
 SpriteRenderer:
