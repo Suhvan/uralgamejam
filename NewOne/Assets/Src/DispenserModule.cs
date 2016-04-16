@@ -39,7 +39,8 @@ public class DispenserModule : Module {
 			{
 				spawnTimer = 0;
 				spawnedObject = (Item)Instantiate( itemPrefab, spawnPoint.position, Quaternion.identity);
-			}
+				spawnedObject.transform.parent = gameObject.transform;
+            }
 		}
 	
 	}
