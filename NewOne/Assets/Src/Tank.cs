@@ -13,6 +13,9 @@ public class Tank : Mortal
 	[SerializeField]
 	private Transform shootingPoint;
 
+    [SerializeField]
+    private Animator gunAnim;
+
 
 	protected override void onDeath()
 	{
@@ -35,6 +38,8 @@ public class Tank : Mortal
 			var bulletPref = shaftModule.GetBullet();
 			if (bulletPref != null)
 			{
+                if (gunAnim)
+                    gunAnim.SetTrigger("shoot");
 				var bullet = (Projectile)Instantiate(bulletPref, shootingPoint.position, shootingPoint.rotation);
 				bullet.Kickstart(0);
 			}
