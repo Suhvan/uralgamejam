@@ -10,6 +10,9 @@ public class Hero : MonoBehaviour {
 	float jumpForce = 20;
 
 	[SerializeField]
+	float jumpAddForce = 20;
+
+	[SerializeField]
 	Transform itemPosition;
 
 	[SerializeField]
@@ -111,6 +114,11 @@ public class Hero : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+
+		if (jumpCooldown > 0 && Input.GetKey(KeyCode.UpArrow))
+		{
+			body.AddForce(new Vector2(0, jumpAddForce));
+		}
 
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, WhatIsGround);
 
