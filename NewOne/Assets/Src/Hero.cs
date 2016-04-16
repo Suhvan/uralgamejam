@@ -25,6 +25,9 @@ public class Hero : MonoBehaviour {
 	[SerializeField]
 	public int platformLayer;
 
+	[SerializeField]
+	float jumpCooldown = 0f;
+
 	bool grounded = false;
 
 	float groundRadius = 0.02f;
@@ -82,9 +85,15 @@ public class Hero : MonoBehaviour {
 			useModule();
         }
 
-		if (grounded && Input.GetKeyDown(KeyCode.UpArrow))
+		if (jumpCooldown > 0) {
+			jumpCooldown -= Time.deltaTime;
+			jumpCooldown = Mathf.Max (jumpCooldown, 0);
+		}
+
+		if (jumpCooldown <= 0 && grounded && Input.GetKey(KeyCode.UpArrow))
 		{
 			body.AddForce(new Vector2(0, jumpForce));
+			jumpCooldown = 0.2f;
 		}
 	}
 
