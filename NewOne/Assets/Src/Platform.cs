@@ -8,13 +8,20 @@ public class Platform : MonoBehaviour {
 
 	[SerializeField]
 	Collider2D collider;
+	
 	// Use this for initialization
-	void Start () {
-	
+	void Start() {
+
 	}
-	
+
 	// Update is called once per frame
-	protected virtual void FixedUpdate () {
-		collider.isTrigger = player.getYPos() < transform.position.y;
+	void Update() {
+		onChange(player.getYPos() < transform.position.y);
 	}
+
+	protected virtual void onChange(bool change)
+	{
+		collider.isTrigger = change;
+	}
+
 }
