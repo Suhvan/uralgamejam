@@ -132,16 +132,42 @@ public class Hero : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D otherCollider)
 	{
-		currentModule = otherCollider.gameObject.GetComponent<Module>();
-		
+
+		var module = otherCollider.gameObject.GetComponent<Module>();
+		if (module != null)
+		{
+			currentModule = module;
+			return;
+		}
+
+		var button = otherCollider.gameObject.GetComponent<Button>();
+		if(button!=null)
+		{
+			button.Press();
+			return;
+		}
+
 	}
 
 	void OnTriggerExit2D(Collider2D otherCollider)
 	{
-		currentModule = null;
+
+		var module = otherCollider.gameObject.GetComponent<Module>();
+		if (module != null)
+		{
+			currentModule = null;
+			return;
+		}
+
+		var button = otherCollider.gameObject.GetComponent<Button>();
+		if (button != null)
+		{
+			button.Release();
+			return;
+		}
+
+		
     }
-
-
 
 
 	void Flip()

@@ -11,7 +11,6 @@ public class Tank : MonoBehaviour {
 
 	[SerializeField]
 	private Transform shootingPoint;
-	
 
 
 
@@ -22,7 +21,7 @@ public class Tank : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (fireModule.Triggered)
+		if (fireModule!=null && fireModule.Triggered)
 		{
 			fireModule.ReleaseTrigger();
 			var bulletPref = shaftModule.GetBullet();

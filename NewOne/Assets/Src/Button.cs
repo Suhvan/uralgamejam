@@ -16,11 +16,16 @@ public class Button : MonoBehaviour {
 
 	public void Press()
 	{
-
+		if (!Pressed)
+			Pressed = true;
 	}
 
 	public void Release()
 	{
-
+		if (Pressed)
+			Pressed = false;
 	}
+
+
+	public bool Pressed { get; private set; }
 }
