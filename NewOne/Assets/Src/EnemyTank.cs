@@ -58,7 +58,6 @@ public class EnemyTank : BasicShooter
     //
     void DoAction()
     {
-        Debug.Log("DoAction");
         // pick action first
         // don't move twice
         if (lastActionWasReposition)
@@ -81,7 +80,11 @@ public class EnemyTank : BasicShooter
     {
         lastActionWasReposition = true;
 
-        bool moveLeft = idealDistance < gameObject.transform.position.x - aimPoint.position.x;
+        // we are to the right and too far so
+        bool moveLeft = 
+            gameObject.transform.position.x > aimPoint.position.x &&
+            idealDistance < gameObject.transform.position.x - aimPoint.position.x;
+
         // move 'wrong' way sometimes
         if (Random.value > 0.8f)
             moveLeft = !moveLeft;
@@ -99,13 +102,36 @@ public class EnemyTank : BasicShooter
         float initialForce = Random.Range( -3, 3 );
         float initialVelocity = (projPrefab.shotForce + initialForce) / projPrefab.GetComponent<Rigidbody2D>().mass;
 
-        float approxAlpha = Mathf.Asin( (shootingPoint.position.x - aimPoint.position.x) * projPrefab.GetComponent<Rigidbody2D>().gravityScale * 10 / (initialVelocity * initialVelocity) ) / 2;
+        // ignore vertical difference
+        float approxAlpha = Mathf.PI/4;
+        float alphaSin = Mathf.Abs(shootingPoint.position.x - aimPoint.position.x) * projPrefab.GetComponent<Rigidbody2D>().gravityScale * 10 / (initialVelocity * initialVelocity);
+        if( Mathf.Abs( alphaSin ) >= 0.999 )
+        {
+            // no solution, sorry, just shoot as far as you can
+        }
+        else
+        {
+            approxAlpha = Mathf.Asin( alphaSin ) / 2;
+        }
+
+        bool shootLeft = shootingPoint.position.x > aimPoint.position.x;
 
         // miss much!
-        approxAlpha *= Random.Range(0.8f, 1.8f);
-        Debug.Log("approxAlpha " + approxAlpha);
-        gunToAim.Angle = 180 - Mathf.Rad2Deg * approxAlpha;
+        approxAlpha += Random.Range(0.1f, 0.1f);
 
+        // there also could be 2 solutions: "low" or "hi" angle, Asin provides us with "low" one
+        // make it "hi" 75% of the time
+        if (approxAlpha < Mathf.PI / 8 && Random.value <= 0.75f)
+            approxAlpha = ( Mathf.PI / 2 - approxAlpha );
+
+        if (shootLeft)
+        {
+            gunToAim.Angle = 180 - Mathf.Rad2Deg * approxAlpha;
+        }
+        else
+        {
+            gunToAim.Angle = Mathf.Rad2Deg * approxAlpha;
+        }
 
         //
         Shoot(initialForce);
