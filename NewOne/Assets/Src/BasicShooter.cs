@@ -6,24 +6,30 @@ public class BasicShooter : MonoBehaviour {
     private Module fireModule;
 
     [SerializeField]
-    Projectile projPrefab;
+    protected Projectile projPrefab;
 
     [SerializeField]
-    private Transform shootingPoint;
+    protected Transform shootingPoint;
 
 	// Use this for initialization
 	void Start () {
 	
 	}
+
+    //
+    public void Shoot( float power ) {
+        var bullet = (Projectile)Instantiate(projPrefab, shootingPoint.position, shootingPoint.rotation);
+        bullet.Kickstart(power);
+        Debug.Log(bullet.transform.position);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (fireModule.Triggered)
+        if (fireModule && fireModule.Triggered)
         {
             fireModule.ReleaseTrigger();
 
-            var bullet = (Projectile)Instantiate(projPrefab, shootingPoint.position, shootingPoint.rotation);
-            bullet.Kickstart(0);
+            Shoot( 0 );
         }
 	}
 }
