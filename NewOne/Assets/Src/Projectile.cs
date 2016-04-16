@@ -13,6 +13,9 @@ public class Projectile : MonoBehaviour {
     [SerializeField]
     Tracer tracerPrefab;
 
+    [SerializeField]
+    MuzzleFlash muzzleFlashPrefab;
+
 	[SerializeField]
 	int Damage = 1;
 
@@ -42,6 +45,9 @@ public class Projectile : MonoBehaviour {
         float power = shotForce + gunForce;
 
         GetComponent<Rigidbody2D>().AddForce(this.transform.rotation * new Vector2(power, 0), ForceMode2D.Impulse);
+
+        if( muzzleFlashPrefab )
+            Instantiate(muzzleFlashPrefab, this.transform.position, this.transform.rotation); 
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
