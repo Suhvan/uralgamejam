@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 417964}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: shootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 485294}
   - 212: {fileID: 21224834}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - 4: {fileID: 402514}
   - 212: {fileID: 21295216}
   - 114: {fileID: 11470824}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tank-gun-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,8 +59,7 @@ GameObject:
   - 212: {fileID: 21233050}
   - 114: {fileID: 11493216}
   - 60: {fileID: 6089818}
-  - 60: {fileID: 6038880}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,45 +117,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 477402}
   m_RootOrder: 1
---- !u!60 &6038880
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141840}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 3.1, y: 0.59999996}
-      - {x: 3.03, y: 0.72999996}
-      - {x: 2.79, y: 0.94}
-      - {x: 2.71, y: 1}
-      - {x: 1.023323, y: 0.9806193}
-      - {x: 1.152771, y: 1.4549613}
-      - {x: 1.1376419, y: 2.547677}
-      - {x: 0.84843445, y: 2.9543324}
-      - {x: 0.45491028, y: 3.1629405}
-      - {x: -0.548851, y: 3.1364431}
-      - {x: -0.90166473, y: 2.9081016}
-      - {x: -1.1539917, y: 2.54851}
-      - {x: -1.10643, y: 1.4112422}
-      - {x: -1.0840836, y: 1.0258694}
-      - {x: -2.72, y: 1}
-      - {x: -2.85, y: 0.91999996}
-      - {x: -3.03, y: 0.76}
-      - {x: -3.1, y: 0.62}
-      - {x: -3.1, y: -0.61}
-      - {x: -3.04, y: -0.71999997}
-      - {x: -2.83, y: -0.9}
-      - {x: -2.71, y: -1}
-      - {x: 2.74, y: -1}
-      - {x: 3.01, y: -0.75}
-      - {x: 3.1, y: -0.59}
 --- !u!60 &6089818
 PolygonCollider2D:
   m_ObjectHideFlags: 1

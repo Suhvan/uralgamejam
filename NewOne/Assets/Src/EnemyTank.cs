@@ -36,7 +36,7 @@ public class EnemyTank : BasicShooter
     {
 		// small offset
 		aimPoint = GameCore.Instance.mainTank.transform;
-        actionTimer -= Random.Range(0.1f, 0.7f);
+        actionTimer -= Random.Range(0.1f, 0.9f) * actionInterval;
     }
 
     // Update is called once per frame
