@@ -13,7 +13,6 @@ public class Tank : MonoBehaviour {
 	private Transform shootingPoint;
 
 
-
 	// Use this for initialization
 	void Start () {
 	
@@ -27,7 +26,7 @@ public class Tank : MonoBehaviour {
 			var bulletPref = shaftModule.GetBullet();
 			if (bulletPref != null)
 			{
-				var bullet = (Projectile)Instantiate(bulletPref, shootingPoint.position, Quaternion.identity);
+				var bullet = (Projectile)Instantiate(bulletPref, shootingPoint.position, shootingPoint.rotation);
 				bullet.Kickstart(0);
 			}
 			else

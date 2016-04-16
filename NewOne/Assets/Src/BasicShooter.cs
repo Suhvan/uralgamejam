@@ -22,14 +22,4 @@ public class BasicShooter : MonoBehaviour {
         bullet.Kickstart(power);
         Debug.Log(bullet.transform.position);
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (fireModule && fireModule.Triggered)
-        {
-            fireModule.ReleaseTrigger();
-
-            Shoot( 0 );
-        }
-	}
 }

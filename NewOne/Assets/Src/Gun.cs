@@ -5,7 +5,6 @@ public class Gun : MonoBehaviour {
 
 	private float angle = 0;
 
-
 	public float Angle 
 	{
 		set

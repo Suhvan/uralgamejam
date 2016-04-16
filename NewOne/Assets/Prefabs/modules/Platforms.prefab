@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 474466}
   - 212: {fileID: 21230280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform-hole-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 480386}
   - 212: {fileID: 21298028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform-hole-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ public class Platform : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	protected virtual void Update () {
+	protected virtual void FixedUpdate () {
 		collider.isTrigger = player.getYPos() < transform.position.y;
 	}
 }
