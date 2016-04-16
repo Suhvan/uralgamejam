@@ -18,7 +18,9 @@ public class Projectile : MonoBehaviour {
 
 	public void Kickstart(float gunForce)
 	{	
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(shotForce + gunForce, 0), ForceMode2D.Impulse);
+        float power = shotForce + gunForce;
+
+        GetComponent<Rigidbody2D>().AddForce(this.transform.rotation * new Vector2(power, 0), ForceMode2D.Impulse);
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
