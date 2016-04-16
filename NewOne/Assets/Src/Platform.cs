@@ -2,10 +2,7 @@
 using System.Collections;
 
 public class Platform : MonoBehaviour {
-
-	[SerializeField]
-	Hero player;
-
+	
 	[SerializeField]
 	Collider2D collider;
 	
@@ -16,7 +13,7 @@ public class Platform : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		onChange(player.getYPos() < transform.position.y);
+		onChange(GameCore.Instance.Player.getYPos() < transform.position.y);
 	}
 
 	protected virtual void onChange(bool change)

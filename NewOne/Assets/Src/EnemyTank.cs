@@ -8,7 +8,7 @@ public class EnemyTank : BasicShooter
     float actionInterval = 3.0f;
     float actionTimer = 0.0f;
 
-    [SerializeField]
+    //[SerializeField]
     Transform aimPoint;
 
     [SerializeField]
@@ -31,7 +31,8 @@ public class EnemyTank : BasicShooter
     // Use this for initialization
     void Start()
     {
-        // small offset
+		// small offset
+		aimPoint = GameCore.Instance.mainTank.transform;
         actionTimer -= Random.Range(0.1f, 0.7f);
     }
 

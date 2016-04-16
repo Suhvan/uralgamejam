@@ -5,7 +5,13 @@ using UnityEngine.UI;
 public class TopPanel : MonoBehaviour {
 
 	[SerializeField]
-	Text status; 
+	Text status;
+
+	[SerializeField]
+	Text hp;
+
+	[SerializeField]
+	Text score;
 
 	public static TopPanel Instance { get; private set; }
 
@@ -26,6 +32,17 @@ public class TopPanel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (hp!=null && GameCore.Instance.mainTank!=null)
+		{
+			hp.text = "HP: " + GameCore.Instance.mainTank.HP;
+		}
+
+		if (score != null)
+		{
+			score.text = "Deathcount: " + GameCore.Instance.Score;
+		}
+
+
 	
 	}
 }

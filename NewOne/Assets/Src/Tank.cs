@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Tank : MonoBehaviour {
+public class Tank : Mortal
+{
 
 	[SerializeField]
 	private Module fireModule;
@@ -11,6 +12,14 @@ public class Tank : MonoBehaviour {
 
 	[SerializeField]
 	private Transform shootingPoint;
+
+
+	protected override void onDeath()
+	{
+		base.onDeath();
+		GameCore.Instance.GameOver();
+	}
+
 
 
 	// Use this for initialization

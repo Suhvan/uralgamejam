@@ -13,6 +13,9 @@ public class Projectile : MonoBehaviour {
     [SerializeField]
     Tracer tracerPrefab;
 
+	[SerializeField]
+	int Damage = 1;
+
 	// Use this for initialization
 	void Start () {
 
@@ -43,6 +46,11 @@ public class Projectile : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
+		var mortalOne = other.gameObject.GetComponent<Mortal>();
+		if (mortalOne != null)
+		{
+			mortalOne.GetDamage(Damage);
+        }
 		Destroy(gameObject);
 	}
 }
