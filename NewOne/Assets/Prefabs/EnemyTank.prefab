@@ -58,6 +58,7 @@ GameObject:
   - 4: {fileID: 477402}
   - 212: {fileID: 21233050}
   - 114: {fileID: 11493216}
+  - 60: {fileID: 6089818}
   m_Layer: 0
   m_Name: EnemyTank
   m_TagString: Untagged
@@ -97,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.75, y: -2.1, z: 0}
+  m_LocalPosition: {x: 104.4, y: -2.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 402514}
@@ -116,6 +117,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 477402}
   m_RootOrder: 1
+--- !u!60 &6089818
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141840}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 3.1, y: 0.59999996}
+      - {x: 3.03, y: 0.72999996}
+      - {x: 2.79, y: 0.94}
+      - {x: 2.71, y: 1}
+      - {x: 1.023323, y: 0.9806193}
+      - {x: 1.152771, y: 1.4549613}
+      - {x: 1.1376419, y: 2.547677}
+      - {x: 0.84843445, y: 2.9543324}
+      - {x: 0.45491028, y: 3.1629405}
+      - {x: -0.548851, y: 3.1364431}
+      - {x: -0.90166473, y: 2.9081016}
+      - {x: -1.1539917, y: 2.54851}
+      - {x: -1.10643, y: 1.4112422}
+      - {x: -1.0840836, y: 1.0258694}
+      - {x: -2.72, y: 1}
+      - {x: -2.85, y: 0.91999996}
+      - {x: -3.03, y: 0.76}
+      - {x: -3.1, y: 0.62}
+      - {x: -3.1, y: -0.61}
+      - {x: -3.04, y: -0.71999997}
+      - {x: -2.83, y: -0.9}
+      - {x: -2.71, y: -1}
+      - {x: 2.74, y: -1}
+      - {x: 3.01, y: -0.75}
+      - {x: 3.1, y: -0.59}
 --- !u!114 &11470824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,11 +178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13a4eec83dff6044b48ce24d23ca326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hp: 1
   fireModule: {fileID: 0}
   projPrefab: {fileID: 11479802, guid: f4c5a3e9d82ec5f418dd7fd39a9b7ef1, type: 2}
   shootingPoint: {fileID: 417964}
   actionInterval: 3
-  aimPoint: {fileID: 0}
   gunToAim: {fileID: 11470824}
   idealDistance: 120
   moveSpeed: 4

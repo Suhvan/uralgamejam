@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BasicShooter : MonoBehaviour {
+public class BasicShooter : Mortal {
     [SerializeField]
     private Module fireModule;
 
@@ -22,4 +22,12 @@ public class BasicShooter : MonoBehaviour {
         bullet.Kickstart(power);
         Debug.Log(bullet.transform.position);
     }
+
+
+	protected override void onDeath()
+	{
+		base.onDeath();
+		Destroy(gameObject);
+		GameCore.Instance.Score++;
+	}
 }
