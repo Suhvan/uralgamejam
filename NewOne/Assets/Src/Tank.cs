@@ -23,8 +23,6 @@ public class Tank : Mortal
 		GameCore.Instance.GameOver();
 	}
 
-
-
 	// Use this for initialization
 	void Start () {
 	
