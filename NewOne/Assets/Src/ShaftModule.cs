@@ -22,7 +22,7 @@ public class ShaftModule : Module {
 		{	
 			var scale = storedItem.transform.localScale;
 			scale.x *= -1;
-			transform.localScale = scale;
+			storedItem.transform.localScale = scale;
 		}
 		
 		return true;

@@ -182,7 +182,7 @@ MonoBehaviour:
   fireModule: {fileID: 0}
   projPrefab: {fileID: 11479802, guid: f4c5a3e9d82ec5f418dd7fd39a9b7ef1, type: 2}
   shootingPoint: {fileID: 417964}
-  actionInterval: 3
+  actionInterval: 10
   gunToAim: {fileID: 11470824}
   idealDistance: 120
   moveSpeed: 4

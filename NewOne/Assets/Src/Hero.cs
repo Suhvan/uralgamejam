@@ -51,7 +51,7 @@ public class Hero : MonoBehaviour {
 		body = GetComponent<Rigidbody2D>();	
 	}
 
-	void useModule()
+	void autoUseModule()
 	{
 		var dispenser = currentModule as DispenserModule;
 		if (dispenser != null)
@@ -77,7 +77,10 @@ public class Hero : MonoBehaviour {
 				holdedItem = null;
 			return;
 		}
+	}
 
+	void useModule()
+	{
 		currentModule.SetTrigger();
 	}
 
@@ -145,7 +148,8 @@ public class Hero : MonoBehaviour {
 		if (module != null)
 		{
 			currentModule = module;
-			return;
+			autoUseModule();
+            return;
 		}
 
 		var button = otherCollider.gameObject.GetComponent<Button>();

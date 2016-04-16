@@ -304,7 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99828a9717edf1541bd592e2fb2441dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   collider: {fileID: 6134474}
   btn: {fileID: 11412860}
 --- !u!114 &11408282
@@ -340,7 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99828a9717edf1541bd592e2fb2441dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   collider: {fileID: 6175048}
   btn: {fileID: 11408282}
 --- !u!114 &11460898
@@ -357,7 +355,7 @@ MonoBehaviour:
   leftButton: {fileID: 11408282}
   rightButton: {fileID: 11412860}
   tank: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!212 &21213782
 SpriteRenderer:
   m_ObjectHideFlags: 1
