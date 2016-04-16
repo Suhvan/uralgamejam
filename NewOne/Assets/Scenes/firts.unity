@@ -596,11 +596,51 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 2141979920}
-    - target: {fileID: 11425022, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+    - target: {fileID: 11414884, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11457614, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11455438, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11443484, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11449418, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11418108, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11407918, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11468994, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11487854, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2141979920}
     - target: {fileID: 11431022, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11425022, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141979920}
+    - target: {fileID: 11474238, guid: f1b83219b07a9fb4c9263695413e0531, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2141979920}
