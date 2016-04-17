@@ -50,7 +50,7 @@ public class Tank : Mortal
 		}
 		else
 		{
-			TopPanel.Instance.setStatus("Нет патронов, чтобы стрелять");
+			//TopPanel.Instance.setStatus("Нет патронов, чтобы стрелять");
 		}
 		yield return null;
 	}

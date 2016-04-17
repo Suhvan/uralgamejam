@@ -58,13 +58,13 @@ public class Hero : MonoBehaviour {
 		{
 			if (holdedItem != null)
 			{
-				TopPanel.Instance.setStatus("Руки уже заняты");
+				//TopPanel.Instance.setStatus("Руки уже заняты");
 				return;
 			}
 
 			if (!PickUpItem(dispenser.GetItem()))
 			{
-				TopPanel.Instance.setStatus("Нечего брать");
+				//TopPanel.Instance.setStatus("Нечего брать");
 			}
 
 			return;

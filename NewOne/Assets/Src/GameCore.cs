@@ -9,6 +9,9 @@ public class GameCore : MonoBehaviour {
 	[SerializeField]
 	public Tank mainTank;
 
+	[SerializeField]
+	public Debrief debr;
+
 	public int Score;
 
 	public static GameCore Instance { get; private set; }
@@ -16,6 +19,7 @@ public class GameCore : MonoBehaviour {
 	void Awake()
 	{
 		Instance = this;
+		debr.gameObject.SetActive(false);
 	}
 
 	// Use this for initialization
@@ -31,9 +35,10 @@ public class GameCore : MonoBehaviour {
 
 	public void GameOver()
 	{
-		TopPanel.Instance.setStatus("GAME OVER");
+		//TopPanel.Instance.setStatus("GAME OVER");
 		Time.timeScale = 0;
-	}
+		debr.gameObject.SetActive(true);
+    }
 
 
 	
