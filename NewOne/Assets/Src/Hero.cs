@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Hero : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class Hero : MonoBehaviour {
 	Transform itemPosition;
 
 	[SerializeField]
-	Transform groundCheck;
+	List<Transform> groundCheck;
 
 	//TODO: очевидно надо перенести это в какой то конфиг
 	[SerializeField]
@@ -43,7 +44,7 @@ public class Hero : MonoBehaviour {
 
 	public float getYPos()
 	{
-		return groundCheck.position.y;
+		return groundCheck[0].position.y;
 	}
 
 	// Use this for initialization
@@ -123,7 +124,7 @@ public class Hero : MonoBehaviour {
 			body.AddForce(new Vector2(0, jumpAddForce));
 		}
 
-		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, WhatIsGround);
+		grounded = checkGround();
 
 		//Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, body.velocity.y > 0);
 
@@ -139,6 +140,17 @@ public class Hero : MonoBehaviour {
 		{
 			Flip();
 		}
+	}
+
+
+	bool checkGround()
+	{
+		foreach (var feet in groundCheck)
+		{
+			if (Physics2D.OverlapCircle(feet.position, groundRadius, WhatIsGround))
+				return true;
+        }
+		return false;
 	}
 
 	void OnTriggerEnter2D(Collider2D otherCollider)

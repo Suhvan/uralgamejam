@@ -15,6 +15,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &166558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 494010}
+  m_Layer: 11
+  m_Name: feet
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &171828
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +79,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &193652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468022}
+  m_Layer: 11
+  m_Name: feet
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &401470
 Transform:
   m_ObjectHideFlags: 1
@@ -71,11 +101,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.045, y: -0.0136, z: -1}
+  m_LocalPosition: {x: -0.0617, y: -0.0136, z: -1}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 414476}
+  - {fileID: 494010}
   - {fileID: 481544}
+  - {fileID: 468022}
   - {fileID: 416396}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,13 +134,37 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 401470}
-  m_RootOrder: 2
+  m_RootOrder: 4
+--- !u!4 &468022
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03, y: -0.07950004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 401470}
+  m_RootOrder: 3
 --- !u!4 &481544
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0604, y: -0.07950004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 401470}
+  m_RootOrder: 2
+--- !u!4 &494010
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0141, y: -0.0795, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -161,7 +217,10 @@ MonoBehaviour:
   jumpForce: 150
   jumpAddForce: 10
   itemPosition: {fileID: 416396}
-  groundCheck: {fileID: 481544}
+  groundCheck:
+  - {fileID: 494010}
+  - {fileID: 481544}
+  - {fileID: 468022}
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 1536
