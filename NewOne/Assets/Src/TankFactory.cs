@@ -30,12 +30,13 @@ public class TankFactory : MonoBehaviour {
 			spawnIncStep = 1;
     }
 	
+        spawnTimer = Random.RandomRange(0.5f, 1.0f) * spawnCooldown;
 	// Update is called once per frame
 	void Update () {
-		spawnTimer += Time.deltaTime;
-		if (spawnTimer > spawnCooldown)
+		spawnTimer -= Time.deltaTime;
+		if (spawnTimer < 0)
 		{
-			spawnTimer = 0;
+            spawnTimer = Random.RandomRange(0.9f, 1.1f) * spawnCooldown;
 			SpawnTank();
         }
 	}
