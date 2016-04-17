@@ -17,6 +17,9 @@ public class EnemyTank : BasicShooter
     [SerializeField]
     float idealDistance = 20.0f;
 
+    [SerializeField]
+    float engagementDistance = 120.0f;
+
     //
     bool lastActionWasReposition = false;
 
@@ -31,6 +34,9 @@ public class EnemyTank : BasicShooter
     float moveDirection = -1.0f;
     float moveTimer = 0.0f;
 
+    //
+    bool moveToEngage = true;
+
     // Use this for initialization
     void Start()
     {
@@ -42,12 +48,25 @@ public class EnemyTank : BasicShooter
     // Update is called once per frame
     void Update()
     {
-        actionTimer += Time.deltaTime;
-        if (actionTimer > actionInterval)
+        if (moveToEngage)
         {
-            actionTimer -= actionInterval;
-            DoAction();
+            // we are to the right
+            bool moveLeft = gameObject.transform.position.x > aimPoint.position.x;
+            moveDirection = moveLeft ? -1.0f : 1.0f;
+            moveTimer = moveDuration;
         }
+        else
+        {
+            actionTimer += Time.deltaTime;
+            if (actionTimer > actionInterval)
+            {
+                actionTimer -= actionInterval;
+                DoAction();
+            }
+        }
+
+        //
+        moveToEngage = Mathf.Abs(aimPoint.transform.position.x - gameObject.transform.position.x) > engagementDistance;
 
         // update movement
         if (moveTimer > 0.0f)
