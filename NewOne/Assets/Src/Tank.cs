@@ -38,6 +38,7 @@ public class Tank : Mortal
 			{
                 if (gunAnim)
                     gunAnim.SetTrigger("shoot");
+
 				var bullet = (Projectile)Instantiate(bulletPref, shootingPoint.position, shootingPoint.rotation);
 				bullet.Kickstart(0);
 			}
@@ -45,9 +46,6 @@ public class Tank : Mortal
 			{
 				TopPanel.Instance.setStatus("Нет патронов, чтобы стрелять");				
 			}
-			
-
-			
 		}
 	}
 }
