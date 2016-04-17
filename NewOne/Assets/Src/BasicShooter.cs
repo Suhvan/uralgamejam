@@ -20,7 +20,6 @@ public class BasicShooter : Mortal {
     public void Shoot( float power ) {
         var bullet = (Projectile)Instantiate(projPrefab, shootingPoint.position, shootingPoint.rotation);
         bullet.Kickstart(power);
-        Debug.Log(bullet.transform.position);
     }
 
 

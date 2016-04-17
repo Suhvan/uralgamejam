@@ -51,7 +51,7 @@ public class TankFactory : MonoBehaviour
     void SpawnTank()
     {
         var pos = rightBase.transform.position;
-        if (GameCore.Instance.Score > 2 && Random.value < 0.5f)
+        if (GameCore.Instance.Score > 1 && Random.value < 0.5f)
         {
             pos = leftBase.transform.position;
         }

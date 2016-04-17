@@ -355,7 +355,7 @@ MonoBehaviour:
   leftButton: {fileID: 11408282}
   rightButton: {fileID: 11412860}
   tank: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 3
 --- !u!212 &21213782
 SpriteRenderer:
   m_ObjectHideFlags: 1
