@@ -276,7 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankPrefab: {fileID: 141840, guid: 4897e0ab6c959264dbae08340b5cc09b, type: 2}
-  spawnCooldown: 20
+  spawnCooldown: 10
+  spawnIncStep: 4
   leftBase: {fileID: 458802}
   rightBase: {fileID: 433044}
 --- !u!124 &12400504
