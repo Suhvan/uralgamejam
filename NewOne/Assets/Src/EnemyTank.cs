@@ -15,6 +15,9 @@ public class EnemyTank : BasicShooter
     Gun gunToAim;
 
     [SerializeField]
+    MuzzleFlash deathAnim;
+
+    [SerializeField]
     float idealDistance = 20.0f;
 
     [SerializeField]
@@ -44,6 +47,16 @@ public class EnemyTank : BasicShooter
 		aimPoint = GameCore.Instance.mainTank.transform;
         actionTimer -= Random.Range(0.1f, 0.9f) * actionInterval;
     }
+
+    //
+    protected override void onDeath()
+    {
+        if (deathAnim)
+            Instantiate(deathAnim, gameObject.transform.position, Quaternion.identity);
+
+        base.onDeath();
+    }
+
 
     // Update is called once per frame
     void Update()

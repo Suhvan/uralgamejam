@@ -202,7 +202,9 @@ MonoBehaviour:
   shootingPoint: {fileID: 417964}
   actionInterval: 10
   gunToAim: {fileID: 11470824}
+  deathAnim: {fileID: 11473594, guid: f0468c3a0d7489848a6843ad12f0baee, type: 2}
   idealDistance: 60
+  engagementDistance: 120
   moveSpeed: 4
   moveDuration: 2
   precision: 0.2
